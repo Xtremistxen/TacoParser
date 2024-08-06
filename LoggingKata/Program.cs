@@ -39,8 +39,7 @@ namespace LoggingKata
 
             ITrackable tacoBellT = null;
             ITrackable tacoBellA = null;
-            ITrackable tacoBellC = null;
-            ITrackable tacoBellO = null;
+            
 
             // TODO: Create a `double` variable to store the distance
 
@@ -65,32 +64,10 @@ namespace LoggingKata
                             tacoBellA = locations[a];
                         }
 
-                        // Wanted to test more locations and distance commented
-                        /*for (int c = 0; c < locations.Length; c++)
-                        {
-                            var corC = new GeoCoordinate(locations[c].Location.Latitude,
-                                locations[c].Location.Longitude);
-
-                            for (int o = 0; o < locations.Length; o++)
-                            {
-                                var corO = new GeoCoordinate(locations[a].Location.Latitude,
-                                    locations[a].Location.Longitude);
-
-                                corDistance = corC.GetDistanceTo(corO);
-
-                                if (corDistance > distance)
-                                {
-                                    distance = corDistance;
-                                    tacoBellC = locations[c];
-                                    tacoBellO = locations[o];*/
                     }
                 }
             }
-            Console.WriteLine($"{tacoBellT.Name} Coordinates: ({tacoBellT.Location.Latitude},{tacoBellT.Location.Longitude})");
-            Console.WriteLine($"{tacoBellA.Name} Coordinates: ({tacoBellA.Location.Latitude},{tacoBellA.Location.Longitude})");
-            //Console.WriteLine($"{tacoBellC.Name} Coordinates: ({tacoBellC.Location.Latitude},{tacoBellC.Location.Longitude})");
-            //Console.WriteLine($"{tacoBellO.Name} Coordinates: ({tacoBellO.Location.Latitude},{tacoBellO.Location.Longitude})");
-            Console.WriteLine($"The distance between the two Taco Bell's is {distance}");
+            Console.WriteLine($"The distance between {tacoBellT.Name} and {tacoBellA.Name} is {distance} meters, which is roughly {Math.Round(distance * 0.00062)} Miles.");
         }
     }
 }
